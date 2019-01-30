@@ -1,4 +1,8 @@
 const toggleMenu = e => {
+  // Stretch
+  if (menu.classList.length > 1) {
+    menu.classList.toggle("menu--closed"); // Stretch
+  }
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle("menu--open");
 };

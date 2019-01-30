@@ -48,8 +48,8 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -61,8 +61,51 @@
   padding: 30px 0;
   text-align: center;
 }
+.menu ul {
+  animation-name: menuDelay;
+  -webkit-animation-delay: 0.2s;
+  animation-duration: 0s;
+  animation-fill-mode: both;
+}
+@keyframes menuDelay {
+  from {
+    opacity: 0;
+  }
+  to {
+    display: 100;
+  }
+}
 .menu--open {
   display: block;
+  animation-name: openMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes openMenu {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+.menu--closed {
+  animation-name: closeMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  display: block;
+}
+@keyframes closeMenu {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+.menu--closed ul,
+.menu--closed li {
+  display: none;
 }
 .articles {
   margin-top: 95px;
@@ -103,7 +146,30 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  animation-name: open;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes open {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 400px;
+  }
+}
+.article-close {
+  animation-name: close;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes close {
+  from {
+    height: 400px;
+  }
+  to {
+    height: 50px;
+  }
 }
 html,
 body {
