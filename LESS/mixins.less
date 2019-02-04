@@ -1,0 +1,31 @@
+.animateCard(@name, @startHeight: 50px, @endHeight: 400px) {
+  animation-name: @name;
+  animation-duration: 0.5s;
+  //animation-timing-function: ease-out;
+  animation-fill-mode: both;
+
+  @keyframes @name {
+    from {
+      height: @startHeight;
+    }
+    to {
+      height: @endHeight;
+    }
+  }
+}
+
+.textAppear(@name, @delay: 0.5s, @appear: 0.5s,) {
+  animation-name: @name;
+  -webkit-animation-delay: @delay;
+  animation-duration: @appear;
+  animation-fill-mode: both;
+
+  @keyframes @name {
+    from {
+      opacity: 0;
+    }
+    to {
+      display: 100;
+    }
+  }
+}

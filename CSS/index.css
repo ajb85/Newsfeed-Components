@@ -35,10 +35,146 @@
   margin: 0;
   font-size: 48px;
 }
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #81c784;
+  border: 1px solid #004d40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+}
+.menu ul {
+  animation-name: menuDelay;
+  -webkit-animation-delay: 0.2s;
+  animation-duration: 0s;
+  animation-fill-mode: both;
+}
+@keyframes menuDelay {
+  from {
+    opacity: 0;
+  }
+  to {
+    display: 100;
+  }
+}
+.menu--open {
+  display: block;
+  animation-name: openMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes openMenu {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+.menu--closed {
+  animation-name: closeMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  display: block;
+}
+@keyframes closeMenu {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+.menu--closed ul,
+.menu--closed li {
+  display: none;
+}
+.articles {
+  margin-top: 95px;
+}
+.article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.article-open {
+  animation-name: open;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes open {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 400px;
+  }
+}
+.article-close {
+  animation-name: close;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes close {
+  from {
+    height: 400px;
+  }
+  to {
+    height: 50px;
+  }
+}
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   background-color: #fffef7;
 }
